@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FamsDBModelStoreContainer" CdmEntityContainer="FamsDBEntities">
+    <EntitySetMapping Name="Catagories">
+      <EntityTypeMapping TypeName="FamsDBModel.Catagory">
+        <MappingFragment StoreEntitySet="Catagory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Catagory_name" ColumnName="Catagory_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="FamsDBModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="P_Image" ColumnName="P_Image" />
+          <ScalarProperty Name="P_Catagory" ColumnName="P_Catagory" />
+          <ScalarProperty Name="P_Disc_Price" ColumnName="P_Disc_Price" />
+          <ScalarProperty Name="P_Quantity" ColumnName="P_Quantity" />
+          <ScalarProperty Name="P_Price" ColumnName="P_Price" />
+          <ScalarProperty Name="P_Description" ColumnName="P_Description" />
+          <ScalarProperty Name="P_Id" ColumnName="P_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="FamsDBModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CartTables">
+      <EntityTypeMapping TypeName="FamsDBModel.CartTable">
+        <MappingFragment StoreEntitySet="CartTable">
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="P_img" ColumnName="P_img" />
+          <ScalarProperty Name="P_Qyt" ColumnName="P_Qyt" />
+          <ScalarProperty Name="P_Price" ColumnName="P_Price" />
+          <ScalarProperty Name="P_Desc" ColumnName="P_Desc" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="FamsDBModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Delivery_Status" ColumnName="Delivery_Status" />
+          <ScalarProperty Name="Payment_Status" ColumnName="Payment_Status" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="P_Img" ColumnName="P_Img" />
+          <ScalarProperty Name="P_Price" ColumnName="P_Price" />
+          <ScalarProperty Name="P_Qty" ColumnName="P_Qty" />
+          <ScalarProperty Name="P_Desc" ColumnName="P_Desc" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

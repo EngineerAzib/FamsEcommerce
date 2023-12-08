@@ -1,0 +1,83 @@
+﻿@model List<FamsEcommerce.Context.CartTable>
+
+    @{
+        ViewBag.Title = "Showcard";
+    }
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <!-- Include Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- Include your other stylesheets or scripts here -->
+        <!-- Include Bootstrap JS and jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+        <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+        <style>
+            .total-price {
+              
+                font-size: 18px;
+                font-weight: bold;
+                color: #007bff; /* Blue color, you can adjust this to your preference */
+                margin-top: 20px;
+                text-align: right; /* Align the text to the right */
+                padding-right: 200px; /* Add padding for spacing */
+                border-top: 2px solid #007bff;
+            }
+        </style>
+    </head>
+    <body>
+        @{
+            float totalprice = 0; // Initialize the totalprice variable
+        }
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.P_Desc</td>
+                        <td>@item.P_Price</td>
+                        <td>@item.P_Qyt</td>
+                        <td><img src="@Url.Content(item.P_img)" alt="Product Image" width="50" height="50" /></td>
+                        <td><a class="btn btn-danger" href="@Url.Action("DeleteCard", "Home", new { id = item.Id })">Delete</a></td>
+                    </tr>
+
+                    totalprice += (float)(item.P_Price * item.P_Qyt);// Calculate total price for each item
+                }
+            </tbody>
+        </table>
+
+        <div class="total-price">
+            Total Price: @totalprice
+        </div>
+        <a class="btn btn-secondary" href="@Url.Action("Index", "Home")">Back</a>
+        @using (Html.BeginForm("Order", "Home", FormMethod.Post, new { role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div style="text-align:center">
+              <input type="submit" class="btn btn-success" value="Confirm Order" />
+            </div>
+        }
+        </body>
+    <script>
+        $(document).ready(function () {
+            $('#cartTable').DataTable();
+        });
+    </script>
+    </html>
+
+

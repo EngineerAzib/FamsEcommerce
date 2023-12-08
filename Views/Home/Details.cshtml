@@ -1,0 +1,99 @@
+﻿@model FamsEcommerce.Context.Product
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .details-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .details-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 10px;
+            display: block;
+            margin: 0 auto;
+            max-height: 200px;
+        }
+
+        h4 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 10px 0;
+        }
+
+        dt {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        dd {
+            margin-bottom: 10px;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="details-container">
+        <h4>Product Details</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>Description:</dt>
+            <dd>@Html.DisplayFor(model => model.P_Description)</dd>
+
+            <dt>Price:</dt>
+            <dd>@Html.DisplayFor(model => model.P_Price)</dd>
+
+            <dt>Quantity:</dt>
+            <dd>@Html.DisplayFor(model => model.P_Quantity)</dd>
+
+            <dt>Discount Price:</dt>
+            <dd>@Html.DisplayFor(model => model.P_Disc_Price)</dd>
+
+            <dt>Category:</dt>
+            <dd>@Html.DisplayFor(model => model.Catagory.Catagory_name)</dd>
+        </dl>
+        <img src="@Url.Content(Model.P_Image)" class="details-image" alt="Product Image" />
+        <p class="back-link">
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+
+        </p>
+    </div>
+
+</body>
+</html>
